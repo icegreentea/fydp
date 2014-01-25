@@ -10,7 +10,7 @@ clc;
 parameters
 
 %Load Test Image
-raw_image = imread('C:\Users\Cat\Documents\School\SYDE 4B\SYDE 462 - Systems Design Workshop\Test Images\FFS1NH.tif');
+raw_image = imread('C:\Users\Cat\Documents\School\SYDE 4B\SYDE 462 - Systems Design Workshop\Test Images\FFS3NH.tif');
 gray_image = rgb2gray(raw_image);
 
 %Crop Image
@@ -35,6 +35,9 @@ figure; imshow(saliency_initial_lane_map_static, []); title('Static Threshold Sa
 %Saliency - Static Threshold
 [saliency_verified_lane_map_static, s] = lane_verify(gray_image_cropped, gray_image, saliency_initial_lane_map_static, saliency_subwindows_static, fisher_threshold_saliency_static, minimum_pixel_count, intensity_threshold);
 figure; imshow(saliency_verified_lane_map_static, []); title('Static Threshold Saliency - Verified Lane Map');
+
+inv_skeleton = bwmorph(saliency_verified_lane_map_static, 'remove');
+figure; imshow(inv_skeleton, []); title('Static Threshold Saliency - Lane Edge Map');
 
 colour_mask = uint8(zeros(n_im_rows,n_im_cols,3));
 colour_mask(:,:,1) = uint8(saliency_verified_lane_map_static);
