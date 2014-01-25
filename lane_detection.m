@@ -36,6 +36,8 @@ figure; imshow(saliency_initial_lane_map_static, []); title('Static Threshold Sa
 [saliency_verified_lane_map_static, s] = lane_verify(gray_image_cropped, gray_image, saliency_initial_lane_map_static, saliency_subwindows_static, fisher_threshold_saliency_static, minimum_pixel_count, intensity_threshold);
 figure; imshow(saliency_verified_lane_map_static, []); title('Static Threshold Saliency - Verified Lane Map');
 
+[i, j] = find(saliency_verified_lane_map_static==1);
+
 inv_skeleton = bwmorph(saliency_verified_lane_map_static, 'remove');
 figure; imshow(inv_skeleton, []); title('Static Threshold Saliency - Lane Edge Map');
 
