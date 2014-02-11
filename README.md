@@ -13,7 +13,7 @@ Ayman to-do's - 2/10
 - figure out a way to make it adaptable to red OR blue, rather than looking for one colour
 - making lane and colour detection work together, separate right now
 - push everything
-- annotate images for testing
+- annotate images for testing - use ginput in MATLAB. For each image, save top left pixel and bottom right pixel.
 
 Algorithm:
 - normalize everything: histogram equalization
