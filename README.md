@@ -13,7 +13,17 @@ Ayman to-do's - 2/10
 - figure out a way to make it adaptable to red OR blue, rather than looking for one colour
 - making lane and colour detection work together, separate right now
 - push everything
-- annotate images for testing - use ginput in MATLAB. For each image, save top left pixel and bottom right pixel.
+- annotate images for testing:
+-   use ginput in MATLAB. For each image, save top left pixel and bottom right pixel.
+-   write to text file to store 
+-   that way, when testing, convex hull pts can be used
+-   right now, do one image at a time, but later:
+fid = fopen( 'results.txt', 'wt' );
+for image = 1:N
+  [a1,a2,a3,a4] = ProcessMyImage( image );
+  fprintf( fid, '%f,%f,%f,%f\n', a1, a2, a3, a4);
+end
+fclose(fid);
 
 Algorithm:
 - normalize everything: histogram equalization
