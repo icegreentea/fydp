@@ -12,5 +12,5 @@ for i = 1:num
     name = file_list{i};
     idx = strfind(name,'.') - 1;
     image = imread(strcat(folder,name));
-    lane_detection(image, strcat('Results\',name(1:idx)));
+    lane_detection(image, name(1:idx));
 end
