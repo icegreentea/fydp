@@ -37,6 +37,9 @@ for i_windows_h = 1:window_ratio_h
     end
 end
 
+se = strel('disk', 40);
+lane_map = imclose(lane_map, se);
+
 %Remove insufficiently large clusters
 %Perform Connected component Analysis
 [cluster_map, cluster_num] = bwlabel(lane_map,4);
