@@ -12,4 +12,4 @@ intensity_threshold = 100;
 
 %HSV Parameters
 v_threshold = 0.7;
-s_threshold = 0.3;
+s_threshold = 0.1;
